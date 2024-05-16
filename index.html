@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newton Cradle</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #113f67;
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      .cradle {
+        width: 50vw;
+        height: 60vh;
+        border-top: 20px solid #8dc6ff;
+        border-radius: 10px;
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        position: relative;
+      }
+      .cradle div {
+        background-color: #8dc6ff;
+        width: 7px;
+        height: 47.5vh;
+        position: relative;
+      }
+      .cradle div::before {
+        content: "";
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background-color: #8dc6ff;
+        position: absolute;
+        bottom: -50px;
+        left: -23px;
+      }
+      .cradle div:first-child {
+        animation: left-swing 2s linear infinite;
+        transform-origin: top left;
+      }
+      .cradle div:last-child {
+        animation: right-swing 2s linear 1s infinite;
+        transform-origin: top right;
+      }
+      @keyframes left-swing {
+        0% {
+          rotate: 0deg;
+        }
+        25% {
+          rotate: 30deg;
+        }
+        50% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 0deg;
+        }
+      }
+      @keyframes right-swing {
+        0% {
+          rotate: 0deg;
+        }
+        25% {
+          rotate: -30deg;
+        }
+        50% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 0deg;
+        }
+      }
+      @media (width<=998px) {
+        .cradle {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cradle">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
